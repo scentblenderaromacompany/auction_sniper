@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Sniper</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Auction Sniper</h1>
+    </header>
+    <form id="search-form">
+      <input type="text" id="keywords" placeholder="Enter keywords" />
+      <button type="submit">Search</button>
+    </form>
+    <table id="auction-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Time Left</th>
+          <th>Location</th>
+          <th>Shipping Cost</th>
+          <th>eBay Price</th>
+          <th>Track</th>
+          <th>Snipe</th>
+          <th>Aggressive Snipe</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <button id="tracked-auctions-btn">Show Tracked Auctions</button>
+    <table id="tracked-auctions">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Time Left</th>
+          <th>Location</th>
+          <th>Shipping Cost</th>
+          <th>eBay Price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div id="auction-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="auction-image" src="" alt="Auction Image" />
+        <div id="auction-details"></div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+  </body>
+</html>
